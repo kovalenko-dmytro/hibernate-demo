@@ -8,5 +8,5 @@ public interface StudentService {
 
     List<Student> find();
 
-    Student save(Student student);
+    void save(Student student);
 }

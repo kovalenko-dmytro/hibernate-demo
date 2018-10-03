@@ -20,19 +20,19 @@
                             <div class="form-group row">
                                 <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="firstName" th:value="${student.firstName}">
+                                    <input type="text" class="form-control" id="firstName" th:field="*{firstName}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="lastName" class="col-sm-2 col-form-label">Last Name:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="lastName" th:value="${student.lastName}">
+                                    <input type="text" class="form-control" id="lastName" th:field="*{lastName}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="age" class="col-sm-2 col-form-label">Age:</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="age" th:value="${student.age}">
+                                    <input type="number" class="form-control" id="age" th:field="*{age}">
                                 </div>
                             </div>
                             <div class="form-group row justify-content-sm-end">

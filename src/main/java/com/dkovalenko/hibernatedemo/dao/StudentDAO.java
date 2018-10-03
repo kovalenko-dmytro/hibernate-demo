@@ -8,5 +8,5 @@ public interface StudentDAO {
 
     List<Student> find();
 
-    Student save(Student student);
+    void save(Student student);
 }

@@ -47,7 +47,7 @@ public class StudentController {
 
         studentService.save(student);
 
-        view.setViewName("redirect:index");
+        view.setViewName("redirect:/students");
 
         return view;
     }

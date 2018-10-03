@@ -22,10 +22,10 @@
                     </thead>
                     <tbody>
                     <tr th:if="${students != null}" th:each="student : ${students}">
-                        <th th:text="${student.studentID}"></th>
-                        <th th:text="${student.firstName}"></th>
-                        <th th:text="${student.lastName}"></th>
-                        <th th:text="${student.age}"></th>
+                        <td th:text="${student.studentID}"></td>
+                        <td th:text="${student.firstName}"></td>
+                        <td th:text="${student.lastName}"></td>
+                        <td th:text="${student.age}"></td>
                     </tr>
                     </tbody>
                 </table>
