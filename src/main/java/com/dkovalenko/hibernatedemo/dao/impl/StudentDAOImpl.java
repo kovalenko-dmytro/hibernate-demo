@@ -29,4 +29,29 @@ public class StudentDAOImpl implements StudentDAO {
         entityManager.persist(student);
 
     }
+
+    @Override
+    public Student find(long studentID) {
+
+        return entityManager.find(Student.class, studentID);
+    }
+
+    @Override
+    public void update(Student student, long studentID) {
+
+        Student updatedStudent = find(studentID);
+
+        updatedStudent.setFirstName(student.getFirstName());
+        updatedStudent.setLastName(student.getLastName());
+        updatedStudent.setAge(student.getAge());
+
+        entityManager.flush();
+
+    }
+
+    @Override
+    public void delete(long studentID) {
+
+        entityManager.remove(find(studentID));
+    }
 }

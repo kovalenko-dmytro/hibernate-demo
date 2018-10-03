@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -46,6 +47,42 @@ public class StudentController {
         ModelAndView view = new ModelAndView();
 
         studentService.save(student);
+
+        view.setViewName("redirect:/students");
+
+        return view;
+    }
+
+    @GetMapping(value = "/students/{studentID}/update")
+    public ModelAndView update(@PathVariable(value = "studentID") long studentID) {
+
+        ModelAndView view = new ModelAndView();
+        view.addObject("student", studentService.find(studentID));
+        view.setViewName("student-update");
+
+        return view;
+    }
+
+    @PostMapping(value = "/students/{studentID}")
+    public ModelAndView update(@ModelAttribute Student student,
+                               @PathVariable(value = "studentID") long studentID) {
+
+        ModelAndView view = new ModelAndView();
+
+        student.setStudentID(studentID);
+        studentService.update(student, studentID);
+
+        view.setViewName("redirect:/students");
+
+        return view;
+    }
+
+    @GetMapping(value = "/students/{studentID}/delete")
+    public ModelAndView delete(@PathVariable(value = "studentID") long studentID) {
+
+        ModelAndView view = new ModelAndView();
+
+        studentService.delete(studentID);
 
         view.setViewName("redirect:/students");
 
