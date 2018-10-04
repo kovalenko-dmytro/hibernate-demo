@@ -13,42 +13,37 @@
             <div class="col-sm-8">
                 <div class="card text-center mt-5">
                     <div class="card-header text-white bg-primary">
-                        Student List
+                        Student Info
                     </div>
                     <div class="card-body">
                         <table class="table mt-2">
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th colspan="3"></th>
+                                <th scope="col">Fields</th>
+                                <th scope="col">Data</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr th:if="${students != null}" th:each="student : ${students}">
+                            <tbody th:if="${student != null}">
+                            <tr>
+                                <td>ID</td>
                                 <td th:text="${student.studentID}"></td>
+                            </tr>
+                            <tr th:if="${student != null}">
+                                <td>First Name</td>
                                 <td th:text="${student.firstName}"></td>
+                            </tr>
+                            <tr>
+                                <td>Last Nmame</td>
                                 <td th:text="${student.lastName}"></td>
-                                <td>
-                                    <a class="btn btn-info" th:href="@{'/students/' + ${student.studentID}}" role="button">View</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-warning" th:href="@{'/students/' + ${student.studentID} + '/update'}" role="button">Edit</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger" th:href="@{'/students/' + ${student.studentID} + '/delete'}" role="button">Delete</a>
-                                </td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td th:text="${student.age}"></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row justify-content-sm-end">
-            <div class="col-sm-4">
-                <a class="btn btn-success mt-2" th:href="@{'/students/create'}" role="button">Create student</a>
             </div>
         </div>
     </div>

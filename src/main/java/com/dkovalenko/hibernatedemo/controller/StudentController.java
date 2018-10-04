@@ -31,6 +31,20 @@ public class StudentController {
         return view;
     }
 
+    @GetMapping(value = "/students/{studentID}")
+    public ModelAndView find(@PathVariable(value = "studentID") long studentID) {
+
+        ModelAndView view = new ModelAndView();
+
+        Student student = studentService.find(studentID);
+
+        view.addObject("student", student);
+
+        view.setViewName("student-view");
+
+        return view;
+    }
+
     @GetMapping(value = "/students/create")
     public ModelAndView create() {
 
