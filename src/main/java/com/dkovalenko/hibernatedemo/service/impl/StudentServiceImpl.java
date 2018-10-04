@@ -24,9 +24,9 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void save(Student student) {
+    public Student save(Student student) {
 
-        studentDAO.save(student);
+        return studentDAO.save(student);
     }
 
     @Override
@@ -35,8 +35,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void update(Student student, long studentID) {
-        studentDAO.update(student, studentID);
+    public Student update(Student student) {
+        return studentDAO.update(student);
     }
 
     @Override

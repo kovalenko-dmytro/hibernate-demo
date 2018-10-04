@@ -8,11 +8,11 @@ public interface StudentDAO {
 
     List<Student> find();
 
-    void save(Student student);
+    Student save(Student student);
 
     Student find(long studentID);
 
-    void update(Student student, long studentID);
+    Student update(Student student);
 
     void delete(long studentID);
 }

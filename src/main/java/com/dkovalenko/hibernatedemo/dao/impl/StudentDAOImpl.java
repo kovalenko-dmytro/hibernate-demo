@@ -24,9 +24,11 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public void save(Student student) {
+    public Student save(Student student) {
 
         entityManager.persist(student);
+
+        return student;
 
     }
 
@@ -37,15 +39,17 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public void update(Student student, long studentID) {
+    public Student update(Student student) {
 
-        Student updatedStudent = find(studentID);
+        Student updatedStudent = find(student.getStudentID());
 
         updatedStudent.setFirstName(student.getFirstName());
         updatedStudent.setLastName(student.getLastName());
         updatedStudent.setAge(student.getAge());
 
         entityManager.flush();
+
+        return updatedStudent;
 
     }
 

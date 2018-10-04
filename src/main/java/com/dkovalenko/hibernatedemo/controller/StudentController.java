@@ -70,7 +70,7 @@ public class StudentController {
         ModelAndView view = new ModelAndView();
 
         student.setStudentID(studentID);
-        studentService.update(student, studentID);
+        studentService.update(student);
 
         view.setViewName("redirect:/students");
 
