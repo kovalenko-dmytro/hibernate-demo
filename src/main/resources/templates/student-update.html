@@ -12,8 +12,8 @@
         <div class="row justify-content-sm-center">
             <div class="col-sm-8">
                 <div class="card text-center mt-5">
-                    <div class="card-header">
-                        Create Student
+                    <div class="card-header text-white bg-warning">
+                        Update Student
                     </div>
                     <div class="card-body">
                         <form method="post" th:action="@{'/students/' + ${student.studentID}}" th:object="${student}">
@@ -35,9 +35,9 @@
                                     <input type="number" class="form-control" id="age" th:field="*{age}">
                                 </div>
                             </div>
-                            <div class="form-group row justify-content-sm-end">
+                            <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-success">Save</button>
+                                    <button type="submit" class="btn btn-warning pl-5 pr-5">Save</button>
                                 </div>
                             </div>
                         </form>

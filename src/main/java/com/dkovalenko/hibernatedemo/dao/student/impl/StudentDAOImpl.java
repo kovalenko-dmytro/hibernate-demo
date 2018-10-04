@@ -1,7 +1,7 @@
-package com.dkovalenko.hibernatedemo.dao.impl;
+package com.dkovalenko.hibernatedemo.dao.student.impl;
 
-import com.dkovalenko.hibernatedemo.dao.StudentDAO;
-import com.dkovalenko.hibernatedemo.entity.Student;
+import com.dkovalenko.hibernatedemo.dao.student.StudentDAO;
+import com.dkovalenko.hibernatedemo.entity.student.Student;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

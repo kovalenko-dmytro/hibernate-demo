@@ -1,4 +1,4 @@
-package com.dkovalenko.hibernatedemo.entity;
+package com.dkovalenko.hibernatedemo.entity.student;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

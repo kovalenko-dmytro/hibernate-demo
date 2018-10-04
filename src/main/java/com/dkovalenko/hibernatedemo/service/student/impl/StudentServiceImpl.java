@@ -1,8 +1,8 @@
-package com.dkovalenko.hibernatedemo.service.impl;
+package com.dkovalenko.hibernatedemo.service.student.impl;
 
-import com.dkovalenko.hibernatedemo.dao.StudentDAO;
-import com.dkovalenko.hibernatedemo.entity.Student;
-import com.dkovalenko.hibernatedemo.service.StudentService;
+import com.dkovalenko.hibernatedemo.dao.student.StudentDAO;
+import com.dkovalenko.hibernatedemo.entity.student.Student;
+import com.dkovalenko.hibernatedemo.service.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

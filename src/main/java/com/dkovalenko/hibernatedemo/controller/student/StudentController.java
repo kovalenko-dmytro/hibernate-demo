@@ -1,7 +1,7 @@
-package com.dkovalenko.hibernatedemo.controller;
+package com.dkovalenko.hibernatedemo.controller.student;
 
-import com.dkovalenko.hibernatedemo.entity.Student;
-import com.dkovalenko.hibernatedemo.service.StudentService;
+import com.dkovalenko.hibernatedemo.entity.student.Student;
+import com.dkovalenko.hibernatedemo.service.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

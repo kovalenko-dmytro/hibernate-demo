@@ -1,10 +1,10 @@
-package com.dkovalenko.hibernatedemo.service;
+package com.dkovalenko.hibernatedemo.dao.student;
 
-import com.dkovalenko.hibernatedemo.entity.Student;
+import com.dkovalenko.hibernatedemo.entity.student.Student;
 
 import java.util.List;
 
-public interface StudentService {
+public interface StudentDAO {
 
     List<Student> find();
 
