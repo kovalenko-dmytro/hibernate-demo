@@ -26,7 +26,7 @@ public class StudentController {
         ModelAndView view = new ModelAndView();
         view.addObject("students", studentService.find());
         view.addObject("student", new Student());
-        view.setViewName("index");
+        view.setViewName("students");
 
         return view;
     }
