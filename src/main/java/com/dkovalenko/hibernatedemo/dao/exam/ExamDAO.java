@@ -4,7 +4,7 @@ import com.dkovalenko.hibernatedemo.dao.AbstractDAO;
 import com.dkovalenko.hibernatedemo.entity.exam.Exam;
 import org.springframework.stereotype.Repository;
 
-@Repository("examDAO")
+@Repository
 public class ExamDAO extends AbstractDAO<Exam> {
 
     public ExamDAO(Exam exam) {

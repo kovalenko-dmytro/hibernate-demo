@@ -6,7 +6,7 @@ import com.dkovalenko.hibernatedemo.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("studentService")
+@Service
 public class StudentService extends AbstractService<Student, StudentDAO> {
 
     @Autowired

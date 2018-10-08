@@ -5,7 +5,7 @@ import com.dkovalenko.hibernatedemo.entity.subject.Subject;
 import org.springframework.stereotype.Repository;
 
 
-@Repository("subjectDAO")
+@Repository
 public class SubjectDAO extends AbstractDAO<Subject> {
 
     public SubjectDAO(Subject subject) {

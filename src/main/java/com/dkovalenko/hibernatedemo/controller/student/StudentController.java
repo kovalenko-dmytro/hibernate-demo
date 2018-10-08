@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller("studentController")
+@Controller
 public class StudentController extends AbstractController<Student, StudentService> {
 
     @Autowired

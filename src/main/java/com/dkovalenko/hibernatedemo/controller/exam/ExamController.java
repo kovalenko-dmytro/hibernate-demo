@@ -4,15 +4,14 @@ import com.dkovalenko.hibernatedemo.controller.AbstractController;
 import com.dkovalenko.hibernatedemo.entity.exam.Exam;
 import com.dkovalenko.hibernatedemo.service.exam.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller("examController")
+@Controller
 public class ExamController extends AbstractController<Exam, ExamService> {
 
     @Autowired
-    public ExamController(@Qualifier("examService") ExamService service) {
+    public ExamController(ExamService service) {
         super(service);
     }
 
