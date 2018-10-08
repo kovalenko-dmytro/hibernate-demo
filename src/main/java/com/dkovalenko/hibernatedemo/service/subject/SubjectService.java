@@ -1,18 +1,17 @@
 package com.dkovalenko.hibernatedemo.service.subject;
 
+import com.dkovalenko.hibernatedemo.dao.subject.SubjectDAO;
 import com.dkovalenko.hibernatedemo.entity.subject.Subject;
+import com.dkovalenko.hibernatedemo.service.AbstractService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
-import java.util.Set;
+@Service("subjectService")
+public class SubjectService extends AbstractService<Subject, SubjectDAO> {
 
-public interface SubjectService {
-
-    Set<Subject> find();
-
-    Subject save(Subject subject);
-
-    Subject find(long subjectID);
-
-    Subject update(Subject subject);
-
-    void delete(long subjectID);
+    @Autowired
+    public SubjectService(@Qualifier("subjectDAO") SubjectDAO repository) {
+        super(repository);
+    }
 }

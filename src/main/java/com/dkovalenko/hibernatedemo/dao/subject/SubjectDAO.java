@@ -1,18 +1,26 @@
 package com.dkovalenko.hibernatedemo.dao.subject;
 
+import com.dkovalenko.hibernatedemo.dao.AbstractDAO;
 import com.dkovalenko.hibernatedemo.entity.subject.Subject;
+import org.springframework.stereotype.Repository;
 
-import java.util.Set;
 
-public interface SubjectDAO {
+@Repository("subjectDAO")
+public class SubjectDAO extends AbstractDAO<Subject> {
 
-    Set<Subject> find();
+    public SubjectDAO(Subject subject) {
+        super(subject);
+    }
 
-    Subject find(long subjectID);
+    @Override
+    public Subject update(Subject subject) {
 
-    Subject save(Subject subject);
+        Subject updatedSubject = find(subject.getId());
 
-    Subject update(Subject subject);
+        updatedSubject.setName(subject.getName());
 
-    void delete(long subjectID);
+        entityManager.flush();
+
+        return updatedSubject;
+    }
 }

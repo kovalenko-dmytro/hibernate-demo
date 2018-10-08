@@ -26,16 +26,16 @@
                             </thead>
                             <tbody>
                             <tr th:if="${subjects != null}" th:each="subject : ${subjects}">
-                                <td th:text="${subject.subjectID}"></td>
+                                <td th:text="${subject.id}"></td>
                                 <td th:text="${subject.name}"></td>
                                 <td>
-                                    <a class="btn btn-info" th:href="@{'/subjects/' + ${subject.subjectID}}" role="button">View</a>
+                                    <a class="btn btn-info" th:href="@{'/subjects/' + ${subject.id}}" role="button">View</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-warning" th:href="@{'/subjects/' + ${subject.subjectID} + '/update'}" role="button">Edit</a>
+                                    <a class="btn btn-warning" th:href="@{'/subjects/' + ${subject.id} + '/update'}" role="button">Edit</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" th:href="@{'/subjects/' + ${subject.subjectID} + '/delete'}" role="button">Delete</a>
+                                    <a class="btn btn-danger" th:href="@{'/subjects/' + ${subject.id} + '/delete'}" role="button">Delete</a>
                                 </td>
                             </tr>
                             </tbody>

@@ -2,15 +2,12 @@ package com.dkovalenko.hibernatedemo.dao.student;
 
 import com.dkovalenko.hibernatedemo.dao.AbstractDAO;
 import com.dkovalenko.hibernatedemo.entity.student.Student;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 @Repository("studentDAO")
 public class StudentDAO extends AbstractDAO<Student> {
 
-    @Autowired
-    public StudentDAO(@Qualifier("student") Student student) {
+    public StudentDAO(Student student) {
         super(student);
     }
 

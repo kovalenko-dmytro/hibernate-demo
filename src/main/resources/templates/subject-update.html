@@ -16,7 +16,7 @@
                         Update Subject
                     </div>
                     <div class="card-body">
-                        <form method="post" th:action="@{'/subjects/' + ${subject.subjectID}}" th:object="${subject}">
+                        <form method="post" th:action="@{'/subjects/' + ${subject.id}}" th:object="${subject}">
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Name:</label>
                                 <div class="col-sm-10">
