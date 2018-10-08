@@ -42,7 +42,7 @@ public class SubjectDAOImpl implements SubjectDAO {
     @Override
     public Subject update(Subject subject) {
 
-        Subject updatedSubject = find(subject.getSubjectID());
+        Subject updatedSubject = find(subject.getId());
 
         updatedSubject.setName(subject.getName());
 

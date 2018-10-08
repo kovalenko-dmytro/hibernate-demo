@@ -27,17 +27,17 @@
                             </thead>
                             <tbody>
                             <tr th:if="${students != null}" th:each="student : ${students}">
-                                <td th:text="${student.studentID}"></td>
+                                <td th:text="${student.id}"></td>
                                 <td th:text="${student.firstName}"></td>
                                 <td th:text="${student.lastName}"></td>
                                 <td>
-                                    <a class="btn btn-info" th:href="@{'/students/' + ${student.studentID}}" role="button">View</a>
+                                    <a class="btn btn-info" th:href="@{'/students/' + ${student.id}}" role="button">View</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-warning" th:href="@{'/students/' + ${student.studentID} + '/update'}" role="button">Edit</a>
+                                    <a class="btn btn-warning" th:href="@{'/students/' + ${student.id} + '/update'}" role="button">Edit</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" th:href="@{'/students/' + ${student.studentID} + '/delete'}" role="button">Delete</a>
+                                    <a class="btn btn-danger" th:href="@{'/students/' + ${student.id} + '/delete'}" role="button">Delete</a>
                                 </td>
                             </tr>
                             </tbody>

@@ -16,7 +16,7 @@
                         Update Student
                     </div>
                     <div class="card-body">
-                        <form method="post" th:action="@{'/students/' + ${student.studentID}}" th:object="${student}">
+                        <form method="post" th:action="@{'/students/' + ${student.id}}" th:object="${student}">
                             <div class="form-group row">
                                 <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
                                 <div class="col-sm-10">

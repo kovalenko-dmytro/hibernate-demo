@@ -1,47 +1,25 @@
 package com.dkovalenko.hibernatedemo.dao.student.impl;
 
-import com.dkovalenko.hibernatedemo.dao.student.StudentDAO;
+import com.dkovalenko.hibernatedemo.dao.AbstractDAO;
 import com.dkovalenko.hibernatedemo.entity.student.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
 
 @Repository
-@Transactional
-public class StudentDAOImpl implements StudentDAO {
+@Component("studentDAOImpl")
+public class StudentDAOImpl extends AbstractDAO<Student> {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Student> find() {
-
-        return (List<Student>) entityManager.createQuery("SELECT s FROM Student s").getResultList();
-    }
-
-    @Override
-    public Student save(Student student) {
-
-        entityManager.persist(student);
-
-        return student;
-
-    }
-
-    @Override
-    public Student find(long studentID) {
-
-        return entityManager.find(Student.class, studentID);
+    @Autowired
+    public StudentDAOImpl(@Qualifier("student") Student student) {
+        super(student);
     }
 
     @Override
     public Student update(Student student) {
 
-        Student updatedStudent = find(student.getStudentID());
+        Student updatedStudent = find(student.getId());
 
         updatedStudent.setFirstName(student.getFirstName());
         updatedStudent.setLastName(student.getLastName());
@@ -53,9 +31,4 @@ public class StudentDAOImpl implements StudentDAO {
 
     }
 
-    @Override
-    public void delete(long studentID) {
-
-        entityManager.remove(find(studentID));
-    }
 }

@@ -82,7 +82,7 @@ public class SubjectController {
 
         ModelAndView view = new ModelAndView();
 
-        subject.setSubjectID(subjectID);
+        subject.setId(subjectID);
         subjectService.update(subject);
 
         view.setViewName("redirect:/subjects");

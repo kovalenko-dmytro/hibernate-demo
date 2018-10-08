@@ -1,25 +1,26 @@
 package com.dkovalenko.hibernatedemo.entity.student;
 
+import com.dkovalenko.hibernatedemo.entity.AbstractEntity;
 import com.dkovalenko.hibernatedemo.entity.address.Address;
 import com.dkovalenko.hibernatedemo.entity.exam.Exam;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Component("student")
 @Table(name = "students")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Student {
+public class Student extends AbstractEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "student_id")
-    private long studentID;
 
     @Column(name = "first_name")
     private String firstName;

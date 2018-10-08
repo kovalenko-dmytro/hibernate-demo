@@ -1,5 +1,6 @@
 package com.dkovalenko.hibernatedemo.entity.exam;
 
+import com.dkovalenko.hibernatedemo.entity.AbstractEntity;
 import com.dkovalenko.hibernatedemo.entity.student.Student;
 import com.dkovalenko.hibernatedemo.entity.subject.Subject;
 import lombok.AllArgsConstructor;
@@ -13,11 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Exam {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long examID;
+public class Exam extends AbstractEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
