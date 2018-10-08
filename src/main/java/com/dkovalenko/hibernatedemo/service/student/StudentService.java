@@ -1,18 +1,17 @@
 package com.dkovalenko.hibernatedemo.service.student;
 
+import com.dkovalenko.hibernatedemo.dao.student.StudentDAO;
 import com.dkovalenko.hibernatedemo.entity.student.Student;
+import com.dkovalenko.hibernatedemo.service.AbstractService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
+@Service("studentService")
+public class StudentService extends AbstractService<Student, StudentDAO> {
 
-public interface StudentService {
-
-    List<Student> find();
-
-    Student save(Student student);
-
-    Student find(long studentID);
-
-    Student update(Student student);
-
-    void delete(long studentID);
+    @Autowired
+    public StudentService(@Qualifier("studentDAO") StudentDAO repository) {
+        super(repository);
+    }
 }

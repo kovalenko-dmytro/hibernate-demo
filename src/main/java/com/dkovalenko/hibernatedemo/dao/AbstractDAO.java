@@ -22,7 +22,7 @@ public abstract class AbstractDAO<E extends AbstractEntity> implements CommonDAO
     @SuppressWarnings("unchecked")
     public List<E> find() {
 
-        return entityManager.createQuery("SELECT e FROM " + getClassName() + " e")
+        return (List<E>) entityManager.createQuery("SELECT e FROM " + getClassName() + " e")
                 .getResultList();
     }
 
