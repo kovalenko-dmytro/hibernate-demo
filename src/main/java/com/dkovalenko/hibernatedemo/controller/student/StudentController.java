@@ -4,7 +4,6 @@ import com.dkovalenko.hibernatedemo.controller.AbstractController;
 import com.dkovalenko.hibernatedemo.entity.student.Student;
 import com.dkovalenko.hibernatedemo.service.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class StudentController extends AbstractController<Student, StudentService> {
 
     @Autowired
-    public StudentController(@Qualifier("studentService") StudentService service) {
+    public StudentController(StudentService service) {
         super(service);
     }
 
